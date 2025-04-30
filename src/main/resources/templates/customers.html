@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>manage Customers</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Manage customers</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/customers/new}">Add New Customer</a>
+    </div>
+    <div th:if="${#messages}">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>E-mail</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Delivery</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Code</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="customer: ${listCustomers}">
+                <tr>
+                    <td>[[${customer.id}]]</td>
+                    <td>[[${customer.email}]]</td>
+                    <td>[[${customer.firstName}]]</td>
+                    <td>[[${customer.lastName}]]</td>
+                    <td>[[${customer.delivery}]]</td>
+                    <td>[[${customer.street }]]</td>
+                    <td>[[${customer.city }]]</td>
+                    <td>[[${customer.province }]]</td>
+                    <td>[[${customer.code }]]</td>
+                    <td>[[${customer.phone}]]</td>
+                    <td>
+                        <a class="h4 m-3" th:href="@{'/customers/edit/' + ${customer.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/customers/delete/' + ${customer.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

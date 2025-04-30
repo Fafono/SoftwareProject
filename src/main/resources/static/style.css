@@ -1,0 +1,7 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("food.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

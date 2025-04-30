@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Home Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <h1>Menu</h1>
+    <div th:if="${#messages}">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="menu: ${listItems}">
+                <tr>
+                    <td>[[${menu.id}]]</td>
+                    <td>[[${menu.item}]]</td>
+                    <td>[[${menu.price}]]</td>
+                    <td>[[${menu.description}]]</td>
+                    <td>[[${menu.category}]]</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm add-to-cart" th:attr="data-id=${menu.id},data-item=${menu.item},data-price=${menu.price}">Add to Cart</button>
+
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <footer class="text-center py-3 bg-light">
+        <p>Food Factory &copy; 2025</p>
+    </footer>
+
+<script>
+    
+</script>
+</body>
+</html>

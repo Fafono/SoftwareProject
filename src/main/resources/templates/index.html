@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Home Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/index}">Food Factory</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/users}">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/customers}">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/menu}">RESERVATIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/menu}">ORDER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/menu}">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<img th:src="@{/food.jpg}" alt="bg-img" style="height: 100vh; width: 100%; object-fit: cover">
+<div class="container-fluid text-center">
+    <h1>Welcome to Food Factory app</h1>
+    <a class="h2" th:href="@{/users}">Manage users</a>
+    <a class="h2" th:href="@{/customers}">Manage customers</a>
+    <a class="h2" th:href="@{/menu}">Manage items</a>
+</div>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
