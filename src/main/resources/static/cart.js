@@ -23,4 +23,53 @@ document.addEventListener("DOMContentLoaded", function() {
         cartTotal.textContent = total.toFixed(2);
         cartCount.textContent = itemCount;
     }
-})
+
+    fetch('/api/cart')
+    .then(response => response.json())
+    .then(cart => updateCart(cart))
+    .catch(error => console.error('Error fetching cart:', error));
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const items = {
+                id:button.dataset.id,
+                item: button.dataset.item,
+                price: parseFloat(button.dataset.price),
+                quantity: 1
+            };
+
+            fetch('/api/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(items)
+
+            })
+                .then(response => response.json())
+                .then(cart => updateCart(cart))
+                .catch(error => console.error('Error creating cart:', error));
+        });
+    });
+
+    document.getElementById('cartItems').addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-item')) {
+            const id = e.target.dataset.id;
+            fetch('/api/cart/remove/${id}', {
+                method: 'DELETE'
+            })
+                .then(response => response.json())
+                .then(cart => updateCart(cart))
+                .catch(error => console.error('Error removing item:', error));
+        }
+    });
+
+    document.getElementById('clearCart').addEventListener('click', () => {
+        fetch('/api/cart/clear', {
+            method: 'DELETE'
+        })
+            .then(response => response.json())
+            .then(cart => updateCart(cart))
+            .catch(error => console.error('Error clearing cart:', error));
+    });
+});
