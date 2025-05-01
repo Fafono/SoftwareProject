@@ -9,6 +9,8 @@
 <body>
 
 <nav class ="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
     <div class="container-fluid">
         <a class="navbar-brand" th:href="@{/menu_interface}">Food Factory</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,29 +22,29 @@
                     <a class="nav-link" th:href="@{/customer_menu}">MENU</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/menu}">RESERVATIONS</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" th:href="@{/menu}">ORDER</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/menu}">CONTACT US</a>
                 </li>
             </ul>
-            <form class="d-flex" th:action="@{/search}" th:method="get">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a th:href="@{/register}" class="btn btn-outline-primary me-2">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/login}" class="btn btn-outline-primary me-2">Login</a>
+                </li>
+            </ul>
         </div>
         <div class="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
             <span class="cart-count" id="cartCount">0</span>
         </div>
     </div>
 </nav>
-<img th:src="@{/food.jpg}" alt="bg-img" style="height: 100vh; width: 100%; object-fit: cover">
-<div class="container mt-4">
-    <h1>Food factory</h1>
-</div>
+
+<p class="text-lg-start">Food Factory</p>
+<img th:src="@{/backgroundimage.jpeg}" alt="bg-img" style="height: 100vh; width: 100%; object-fit: cover">
 
 
 <footer class="text-center py-3 bg-light">

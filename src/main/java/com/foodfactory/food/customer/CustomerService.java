@@ -1,8 +1,5 @@
 package com.foodfactory.food.customer;
 
-import com.foodfactory.food.user.User;
-import com.foodfactory.food.user.UserNotFounException;
-import com.foodfactory.food.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +8,7 @@ import java.util.Optional;
 
 @Service
 public class CustomerService {
+
     @Autowired
     private CustomerRepository repo;
 

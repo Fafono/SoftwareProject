@@ -1,7 +1,14 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url("food.jpg");
+    background-image: url("backgroundimage.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 20px;
+}
+.navbar-brand{
+    font-family: Broadway;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    Color : darkslateblue;
 }
