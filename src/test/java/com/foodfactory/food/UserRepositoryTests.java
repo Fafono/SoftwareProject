@@ -1,7 +1,7 @@
 package com.foodfactory.food;
 
-import com.foodfactory.food.user.User;
-import com.foodfactory.food.user.UserRepository;
+import com.foodfactory.food.model.User;
+import com.foodfactory.food.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;

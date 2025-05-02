@@ -23,6 +23,7 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Category</th>
+                <th>Date</th>
                 <th></th>
             </tr>
             </thead>
@@ -34,6 +35,7 @@
                     <td>[[${menu.price}]]</td>
                     <td>[[${menu.description}]]</td>
                     <td>[[${menu.category}]]</td>
+                    <td>[[${menu.created}]]</td>
                     <td>
                         <a class="h4 m-3" th:href="@{'/menu/edit/' + ${menu.id}}">Edit</a>
                         <a class="h4" th:href="@{'/menu/delete/' + ${menu.id}}">Delete</a>

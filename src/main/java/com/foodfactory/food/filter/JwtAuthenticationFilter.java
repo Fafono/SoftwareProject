@@ -1,6 +1,6 @@
 package com.foodfactory.food.filter;
 
-import com.foodfactory.food.customer.JwtService;
+import com.foodfactory.food.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

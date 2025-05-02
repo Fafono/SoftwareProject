@@ -1,7 +1,7 @@
 package com.foodfactory.food;
 
-import com.foodfactory.food.cart.Cart;
-import com.foodfactory.food.cart.CartItem;
+import com.foodfactory.food.model.Cart;
+import com.foodfactory.food.model.CartItem;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

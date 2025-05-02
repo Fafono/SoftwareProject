@@ -10,37 +10,62 @@
     <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
 
     <form th:action="@{/users/save}" method="post" th:object="${user}"
-    style="max-width: 500px; margin: 0 auto;">
+    style="max-width: 500px; margin: 0 auto;" class="needs-validation" novalidate>
         <input type="hidden" th:field="*{id}">
         <div class="border border-secondary rounded p-3">
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">E-mail:</label>
                 <div class="col-sm-8">
                     <input type="email" th:field="*{email}" class="form-control" required minlength="8" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('email')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{email}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">First Name:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{firstName}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('firstName')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{firstName}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Last Name:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{lastName}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('lastName')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{lastName}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Password:</label>
                 <div class="col-sm-8">
                     <input type="password" th:field="*{password}" class="form-control" required minlength="5" maxlength="15"/>
+                    <p th:if="*{#fields.hasErrors('password')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{password}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Phone:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{phone}" class="form-control" required minlength="5" maxlength="15"/>
+                    <p th:if="*{#fields.hasErrors('phone')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{phone}">
+
+                    </p>
                 </div>
             <div>
             <div class="form-group row">
@@ -50,32 +75,70 @@
                         <option th:value="M">Male</option>
                         <option th:value="F">Female</option>
                     </select>
+                    <p th:if="*{#fields.hasErrors('gender')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{gender}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Job:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{job}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('job')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{job}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Hire date:</label>
                 <div class="col-sm-8">
                     <input type="date" th:field="*{hireDate}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('hireDate')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{hireDate}">
+
+                    </p>
                 </div>
             </div>r
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Salary:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{salary}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('salary')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{salary}">
+
+                    </p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Dept No:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{deptNo}" class="form-control" required minlength="2" maxlength="50"/>
+                    <p th:if="*{#fields.hasErrors('deptNo')}"
+                       th:errorclass="text-danger"
+                       th:errors="*{deptNo}">
+
+                    </p>
                 </div>
             </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Role:</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{role}" class="form-control">
+                            <option value="USER">Customer</option>
+                            <option value="ADMIN">ADMIN</option>
+                        </select>
+                        <p th:if="*{#fields.hasErrors('role')}"
+                           th:errorclass="text-danger"
+                           th:errors="*{role}">
+
+                        </p>
+                    </div>
             <div class="text-center">
                 <button type="submit" class="btn-primary m-2">Save</button>
                 <button type="button" class="border-secondary" onclick="cancelForm()">Cancel</button>
@@ -87,6 +150,20 @@
     function cancelForm() {
         window.location = "[[@{/users}]]";
     }
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.forEach.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if(!form.checkValidity()){
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                forms.classList.add('was-validated');
+            }, false);
+        });
+
+    })();
 </script>
 </body>
 </html>
