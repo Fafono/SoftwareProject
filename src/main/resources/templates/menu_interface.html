@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Food Home Page</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}" type="text/css" />
+
     <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </head>
 <body>
@@ -43,8 +45,157 @@
     </div>
 </nav>
 
-<p class="text-lg-start">Food Factory</p>
-<img th:src="@{/backgroundimage.jpeg}" alt="bg-img" style="height: 100vh; width: 100%; object-fit: cover">
+
+</div>
+
+<div class="sidebar">
+    <h2>GoMeal<span>.</span></h2>
+    <ul>
+        <li class="active">Dashboard</li>
+        <li>Menu</li>
+        <li>Food Order</li>
+        <li>Reviews</li>
+        <li>Settings</li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="header">
+        <h1>Menu</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <button class="add-btn">Add New Menu</button>
+    </div>
+
+    <!-- Categories -->
+    <div class="category">
+        <h3>Category</h3>
+        <div class="category-list">
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Bakery"><p>Bakery</p></div>
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Burger"><p>Burger</p></div>
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Beverage"><p>Beverage</p></div>
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Chicken"><p>Chicken</p></div>
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Pizza"><p>Pizza</p></div>
+            <div class="category-item"><img src="https://via.placeholder.com/50" alt="Seafood"><p>Seafood</p></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Popular This Week <a href="#" class="view-all">View All</a></h3>
+        <div class="item-list">
+            <div class="item">
+                <img src="$kj" alt="Fish Burger">
+                <h4>Fish Burger</h4>
+                <p>$5.59</p>
+                <p>5.0 • 1k+ Reviews</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Double Burger">
+                <h4>Double Burger</h4>
+                <p>$5.59</p>
+                <p>5.0 • 1k+ Reviews</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Beef Burger">
+                <h4>Beef Burger</h4>
+                <p>$5.59</p>
+                <p>5.0 • 1k+ Reviews</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Cheese Burger">
+                <h4>Cheese Burger</h4>
+                <p>$5.59</p>
+                <p>5.0 • 1k+ Reviews</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="upgrade">
+        <div>
+            <h4>Upgrade your plan to get more benefits</h4>
+            <p>Unlock new features...</p>
+        </div>
+        <button>Upgrade</button>
+    </div>
+
+    <div class="section">
+        <h3>Best Seller <a href="#" class="view-all">View All</a></h3>
+        <div class="item-list">
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Pepperoni Pizza">
+                <h4>Pepperoni Pizza</h4>
+                <p class="price">$5.59</p>
+                <p class="sold">Sold 1k+ • 15%</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Japanese Ramen">
+                <h4>Japanese Ramen</h4>
+                <p class="price">$5.59</p>
+                <p class="sold">Sold 1k+ • 15%</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Fried Rice">
+                <h4>Fried Rice</h4>
+                <p class="price">$5.59</p>
+                <p class="sold">Sold 1k+ • 15%</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Vegan Pizza">
+                <h4>Vegan Pizza</h4>
+                <p class="price">$5.59</p>
+                <p class="sold">Sold 1k+ • 15%</p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/150" alt="Beef Burger">
+                <h4>Beef Burger</h4>
+                <p class="price">$5.59</p>
+                <p class="sold">Sold 1k+ • 15%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section promo">
+        <h3>Promo <a href="#" class="view-all">View All</a></h3>
+        <div class="item-list">
+            <div class="item">
+                <div class="discount">15% OFF</div>
+                <img src="https://via.placeholder.com/150" alt="Fish Burger">
+                <h4>Fish Burger</h4>
+                <p>$3.69 <span style="text-decoration: line-through;">$5.59</span></p>
+                <p>5.0 • 1k+ Reviews</p>
+            </div>
+            <div class="item">
+                <div class="discount">15% OFF</div>
+                <img src="https://via.placeholder.com/150" alt="Double Burger">
+                <h4>Double Burger</h4>
+                <p>$3.69 <span style="text-decoration: line-through;">$5.59</span></p>
+                <p>5.0 • 1k+ Reviews</p>
+            </div>
+            <div class="item">
+                <div class="discount">15% OFF</div>
+                <img src="https://via.placeholder.com/150" alt="Beef Burger">
+                <h4>Beef Burger</h4>
+                <p>$3.69 <span style="text-decoration: line-through;">$5.59</span></p>
+                <p>5.0 • 1k+ Reviews</p>
+            </div>
+            <div class="item">
+                <div class="discount">15% OFF</div>
+                <img src="https://via.placeholder.com/150" alt="Cheese Burger">
+                <h4>Cheese Burger</h4>
+                <p>$3.69 <span style="text-decoration: line-through;">$5.59</span></p>
+                <p>5.0 • 1k+ Reviews</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <footer class="text-center py-3 bg-light">

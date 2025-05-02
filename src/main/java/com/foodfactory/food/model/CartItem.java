@@ -13,14 +13,17 @@ public class CartItem {
     private String title;
     private String description;
     private Double price;
-    private int quantity;
+    private String category;
+    private Integer quantity;
 
-    public CartItem(Long id, String title, String description, double price, int quantity) {
-        this.id = id;
-        this.title = title;
+
+    public CartItem(Integer quantity, String description, Double price, String category, String title, Long id) {
+        this.quantity = quantity;
         this.description = description;
         this.price = price;
-        this.quantity = quantity;
+        this.category = category;
+        this.title = title;
+        this.id = id;
     }
 
     public CartItem() {
@@ -59,16 +62,28 @@ public class CartItem {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public double getSubTotal() {
+        return getPrice() * getQuantity();
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public double getSubTotal() {
-        return price * quantity;
     }
 
 }

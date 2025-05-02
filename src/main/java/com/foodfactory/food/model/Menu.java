@@ -35,6 +35,9 @@ public class Menu {
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
+    @Size(max = 255)
+    private String image;
+
     public Long getId() {
         return id;
     }
@@ -89,5 +92,13 @@ public class Menu {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

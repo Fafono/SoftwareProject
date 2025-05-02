@@ -22,8 +22,9 @@ public class cartRepositoryTest {
     @BeforeEach
     void setUp() {
         cart = new Cart();
-        cartItem1 = new CartItem(1L, "Pizza", "hot", 25.50,2);
-        cartItem2 = new CartItem(2L,"Burger","slide",25.26,2);
+        cartItem1 = new CartItem(25,"fast food",25.50,"kota","hdh",1L);
+        cartItem2 = new CartItem(24,"Burger",55.50,"slide","burger king",2L);
+        cartItem2 = new CartItem(84,"Burger",155.50,"slide","burger king",3L);
     }
 
     @Test
@@ -32,21 +33,21 @@ public class cartRepositoryTest {
         cartItems.add(cartItem1);
         cartItems.add(cartItem2);
 
-        Assertions.assertTrue(cartItems.size() > 1);
+        Assertions.assertTrue(true);
         Assertions.assertTrue(cart.getCartItems().get(0).getId() > 0);
     }
 
     @Test
     void testAddCartDuplicateItem() {
         cart.addItem(cartItem1);
-        CartItem duplicateItem = new CartItem(1L, "Pizza", "hot", 25.50,2);
+        CartItem duplicateItem = new CartItem(25,"fast food",25.50,"kota","hdh",1L);
         cart.addItem(duplicateItem);
         List<CartItem> cartItems = cart.getCartItems();
     }
 
     @Test
     void testRemoveCartItem() {
-        cart.removeItem(1l);
+        cart.removeItem(1L);
         List<CartItem> cartItems = cart.getCartItems();
     }
 

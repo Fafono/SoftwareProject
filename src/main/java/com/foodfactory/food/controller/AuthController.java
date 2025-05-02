@@ -12,9 +12,6 @@ public class AuthController {
         return "admin_login"; // Maps to admin_login.html
     }
 
-    @GetMapping("/menu_interface")
-    public String showMenuInterface() {
-        return "menu_interface"; // Maps to menu_interface.html
-    }
+
 
 }
